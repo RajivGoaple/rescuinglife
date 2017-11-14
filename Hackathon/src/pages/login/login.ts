@@ -4,6 +4,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 import { RegisterPage } from '../register/register';
+
+import { ToastController } from 'ionic-angular';
+import { OtpValidationPage } from '../otp-validation/otp-validation';
+// import {Helper} from '../../Helper/Helper'
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,22 +23,31 @@ import { RegisterPage } from '../register/register';
 export class LoginPage {
   loading: any;
   registerCredentials = { username: '', password: '' };
- 
-  constructor(public navCtrl: NavController) {
+ mobileNumber:string="";
+  constructor(public navCtrl: NavController,public toastCtrl: ToastController) {
 
   }
   public login() {
-    if(this.registerCredentials.username=="admin" && this.registerCredentials.password=="admin")
-    {
-     this.navCtrl.push(HomePage);
-    } 
-    else{ 
-      alert("Incorrect Username or Password");
+    if(this.mobileNumber=="1234"){
+            this.navCtrl.push(OtpValidationPage);  
+    }
+    else{   
+      this.presentToast("Coudn't find user, Please register",10000)
+      this.navCtrl.push(RegisterPage,this.mobileNumber);
     }
   }
 
+  
+    public presentToast(msg:string,duration:number) {
+      let toast = this.toastCtrl.create({
+        message: msg,
+        duration: duration
+      });
+      toast.present();
+    }
+
  public createAccount(){
-  this.navCtrl.push(RegisterPage);
+  this.navCtrl.push(RegisterPage,this.mobileNumber);
  }
 
 }

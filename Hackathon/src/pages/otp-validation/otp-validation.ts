@@ -17,7 +17,9 @@ import { HomePage } from '../home/home';
 })
 export class OtpValidationPage {
 public otp:any;
+public mobileNumber;
   constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController) {
+    this.mobileNumber=navParams.data;
   }
 
  public presentToast(msg:string,duration:number) {

@@ -22,5 +22,13 @@ export class MyApp {
       splashScreen.hide();
     });
   }
-}
 
+  /**
+   * openPage
+   */
+  public openPage(par) {
+        alert("working");   
+  }
+
+
+}
