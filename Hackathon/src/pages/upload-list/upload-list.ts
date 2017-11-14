@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import {UploadDetailsPage} from '../../pages/upload-details/upload-details'
 /**
  * Generated class for the UploadListPage page.
  *
@@ -20,6 +21,10 @@ export class UploadListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UploadListPage');
+  }
+
+  public showDetails(){
+    this.navCtrl.push(UploadDetailsPage);
   }
 
 }

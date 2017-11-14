@@ -12,13 +12,19 @@ import { RegisterPage } from '../pages/register/register';
 
 import { OtpValidationPage } from '../pages//otp-validation/otp-validation';
 
+import {UploadListPage} from '../pages/upload-list/upload-list'
+
+import {UploadDetailsPage} from '../pages/upload-details/upload-details'
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
     RegisterPage,
-    OtpValidationPage
+    OtpValidationPage,
+    UploadListPage,
+    UploadDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,9 @@ import { OtpValidationPage } from '../pages//otp-validation/otp-validation';
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage,OtpValidationPage
+    RegisterPage,OtpValidationPage,
+    UploadListPage,
+    UploadDetailsPage
   ],
   providers: [
     StatusBar,
